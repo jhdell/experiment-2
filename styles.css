@@ -1,0 +1,49 @@
+/* ======================= styles.css ======================= */
+:root{--brand-yellow:#F7C600;--brand-black:#0b0b0b;--text-on-dark:#fff;--text-on-light:#111;--panel-gradient:linear-gradient(180deg,#0b0b0b 0%,#0e0e0e 100%);--eq-bg:#fafafa}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text-on-light);background:#fff;line-height:1.55}
+h1{font-family:Montserrat,Arial,sans-serif}
+img{display:block;max-width:100%;height:auto}
+.skip-link{position:absolute;left:-9999px}
+.skip-link:focus{left:0;top:0;background:#fff;padding:.5rem;z-index:999}
+:focus-visible{outline:3px solid var(--brand-yellow);outline-offset:3px}
+
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
+.hero-left{background:var(--panel-gradient);color:var(--text-on-dark);padding:clamp(1.25rem,4vw,3rem);display:flex;flex-direction:column;gap:1.25rem}
+.logo{display:inline-flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}
+.logo-icon{width:28px;height:28px;background:var(--brand-yellow);border-radius:4px;box-shadow:0 0 0 2px #1a1a1a inset}
+.logo-text{font-family:Georgia,serif;letter-spacing:.04em}
+.hero-copy{max-width:40ch}
+.headline{margin:.25rem 0 1rem;font-weight:800;font-size:clamp(2.25rem,5.5vw,4rem);line-height:1.05}
+.lede{color:#e8e8e8;font-size:clamp(1rem,2.2vw,1.125rem);margin-bottom:1.6rem}
+.btn-cta{display:inline-block;background:var(--brand-yellow);color:#000;text-decoration:none;font-weight:800;padding:.9rem 1.2rem;border-radius:6px;box-shadow:0 2px 0 rgba(0,0,0,.25),0 8px 16px rgba(0,0,0,.25)}
+.btn-cta .cta-sub{display:block;font-size:.9em}
+.hero-right img{width:100%;height:100%;object-fit:cover}
+
+
+/* EQUATION (Centered under hero) */
+.justification{padding:clamp(1.5rem,4vw,3rem) 1rem 2.4rem;text-align:center;background:var(--eq-bg)}
+/* Five-column grid: item = item = item; centered */
+.equation{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:minmax(200px,1fr) auto minmax(200px,1fr) auto minmax(200px,1fr);align-items:center;justify-items:center;gap:clamp(1rem,3vw,2.25rem)}
+.item{margin:0;display:flex;flex-direction:column;align-items:center;text-align:center}
+.item figcaption{margin-top:.85rem;font-weight:800;max-width:20ch}
+/* Uniform square icon canvases so centers align */
+.img-wrap{width:clamp(140px,18vw,190px);height:clamp(140px,18vw,190px);display:flex;align-items:center;justify-content:center;position:relative;border-radius:50%}
+/* Faint circular halo (like Canva) */
+.circle-bg::before{content:"";position:absolute;inset:-12%;background:radial-gradient(ellipse at center,rgba(0,0,0,.05) 0%,rgba(0,0,0,0) 70%);border-radius:50%;z-index:0}
+.circle-bg img{position:relative;z-index:1;width:82%;height:82%;object-fit:contain}
+.equals{font-size:clamp(2.4rem,6vw,3.4rem);font-weight:900;color:#101010;line-height:1}
+.bottom-band{height:8px;background:var(--brand-yellow);margin:clamp(1rem,3vw,1.6rem) auto 0;max-width:1100px;border-radius:3px;box-shadow:0 1px 0 #e0a900 inset,0 0 0 3px #fff}
+.tagline{margin:.65rem auto 0;max-width:1100px;font-weight:800;color:#1a1a1a}
+
+
+/* Responsive */
+@media (max-width:960px){
+.hero{grid-template-columns:1fr}
+.hero-right{order:2}
+.equation{grid-template-columns:1fr}
+.equals{display:none}
+}
+.site-footer{height:1px}
